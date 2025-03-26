@@ -2,20 +2,18 @@ import { useState } from "react";
 import { View, Text, StyleSheet, Switch, TouchableOpacity } from "react-native";
 
 export default function SettingsScreen() {
-  const [isDarkMode, setIsDarkMode] = useState(false); // Mode sombre
-  const [unit, setUnit] = useState("metric"); // Unité de température
+  const [isDarkMode, setIsDarkMode] = useState(false); 
+  const [unit, setUnit] = useState("metric"); 
 
   return (
     <View style={[styles.container, { backgroundColor: isDarkMode ? "#333" : "#f5f5f5" }]}>
       <Text style={[styles.title, { color: isDarkMode ? "#fff" : "#000" }]}>⚙️ Paramètres</Text>
 
-      {/* Mode sombre */}
       <View style={styles.option}>
         <Text style={[styles.optionText, { color: isDarkMode ? "#fff" : "#000" }]}>🌙 Mode sombre</Text>
         <Switch value={isDarkMode} onValueChange={setIsDarkMode} />
       </View>
 
-      {/* Choix des unités */}
       <View style={styles.option}>
         <Text style={[styles.optionText, { color: isDarkMode ? "#fff" : "#000" }]}>
           🌡️ Unité de température
